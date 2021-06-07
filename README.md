@@ -2,7 +2,7 @@
 * 쇼핑몰 웹사이트 제작 프로젝트
 
 
-![insta](https://user-images.githubusercontent.com/71425369/118142835-b6f22e00-b445-11eb-8cf0-f89045dc7f0c.PNG)
+![image](https://user-images.githubusercontent.com/71425369/121039886-6ecbee80-c7ec-11eb-8f51-541741a0c394.png)
 
 ## `Skill Stack`
 
