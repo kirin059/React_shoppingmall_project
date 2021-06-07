@@ -27,10 +27,11 @@
 * React-Router를 활용한 SPA 라우팅
 * Bootstrap 라이브러리를 활용한 레이아웃 구성
 * CSSTransition으로 transition효과 적용
-* Express.js로 서버 구현▪연동
+* Express.js로 서버 연동
 
 ## `Project Output`
 
 ![shop](https://user-images.githubusercontent.com/71425369/121040036-8dca8080-c7ec-11eb-8c59-dbd0388ceac1.gif)
 
 
+React 및 redux를 적극 활용한 프로젝트 입니다. 다양한 hooks를 활용하여 쇼핑몰 메인 페이지, 상품 detail페이지, 장바구니 페이지 등을 제작하였습니다. 또한 Bootstrap과 CSSTransition을 활용하여 보다 다양한 UI를 구성하였습니다. 
