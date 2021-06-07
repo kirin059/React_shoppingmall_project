@@ -31,6 +31,6 @@
 
 ## `Project Output`
 
-![insta_clone](https://user-images.githubusercontent.com/71425369/118155985-cb3d2780-b453-11eb-86a7-6b654ea28084.gif)
+![shop](https://user-images.githubusercontent.com/71425369/121040036-8dca8080-c7ec-11eb-8c59-dbd0388ceac1.gif)
 
 
