@@ -1,0 +1,54 @@
+.container {
+    h4 {
+        margin: 30px auto;
+        padding-bottom: 20px;
+        font-size: 35px;
+    }
+    .my-alert {
+        max-width: 500px;
+        width: 100%;
+        margin: auto;
+        padding: 20px;
+        background-color: #eeeeee;
+        border-radius: 10px;
+        
+        p {
+            margin-bottom: 0
+        }
+    }
+    
+    .my-alert-yellow {
+        @extend .my-alert;
+        margin-bottom: 30px;
+        background-color: #ffe591;
+    }
+    
+    .mt-4 {
+        width: 80px;
+        padding: 15px 0;
+        background-color:  #eeeeee;
+        border-radius: 5px;
+
+        .pt-5 {
+            margin: 0;
+        }
+
+        .order {
+            margin-right: 10px;
+        }
+
+        .back {
+            background-color: #6b6767;
+            border: 1px solid #6b6767;
+        }
+    }
+
+    .effect-enter {
+        opacity: 0;
+    }
+
+    .effect-evter-active {
+        opacity: 1;
+        transition: all 2000ms;
+    }
+}
