@@ -17,7 +17,7 @@ const Detail = (props) => {
 
     let { id } = useParams();
     let productsId = props.state.find((a) => {
-        return a.id == id
+        return a.id === id
     });
     
     let [push, setPush] = useState(0)
