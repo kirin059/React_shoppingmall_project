@@ -11,11 +11,12 @@ import Data from './data';
 
 let shoeState = Data;
 let lestState = [10, 11, 12, 13, 14, 15, 16];
-let cartState = [{ id: 0, title: 'nike', quan: 0 }];
+let cartState = [
+  {id: 0, name: 'nike', quan: 1}
+];
 
+// 기본 상품 데이터
 function reducer(state=shoeState, action) {
-  console.log(state)
-  // ajax 요청을 통해 추가 데이터 받아오기(더보기 기능)
   if (action.type === 'addList') {
     let setShoes = [...state, ...action.payload]
     return setShoes
@@ -25,6 +26,7 @@ function reducer(state=shoeState, action) {
   }
 }
 
+// 재고 변경 데이터
 function reducer2(state=lestState, action) {
   if (action.type === 'lestSubstract') {
     let setLest = [...lestState];
@@ -36,25 +38,15 @@ function reducer2(state=lestState, action) {
   }
 }
 
+// cart 데이터
 function reducer3(state = cartState, action) {
-   // cart - 수량변경(+) 버튼
-  if (action.type === 'plus') {
-    let setCart = [...state]
-    setCart[action.payload].quan++;
-    return setCart
-  }
-  // cart - 수량변경(-) 버튼
-  else if (action.type === 'substract') {
-    let setCart = [...state]
-    setCart[action.payload].quan--;
-    return setCart
-  }
-  // detail - 장바구니 버튼 누르면 cart에 추가
+  // 주문하기 누르면 cart에 항목 추가
   if (action.type === 'cartAdd') {
     let found = state.findIndex((a) => { return a.id === action.payload.id })
     
     if (found >= 0) {
-      let setCart =[...state];
+      let setCart = [...state];
+      //setCart[found] = action.payload;
       setCart[found].quan++;
       return setCart;
     }
@@ -63,8 +55,21 @@ function reducer3(state = cartState, action) {
       setCart.push(action.payload)
       return setCart;
     }
-
   }
+
+  // cart에 수량증감
+  else if (action.type === 'plus') {
+    let setCart = [...state]
+    setCart[action.payload].quan++;
+    return setCart
+  }
+
+  else if (action.type === 'substract') {  
+    let setCart = [...state]
+    setCart[action.payload].quan--;
+    return setCart
+  }
+
   else {
     return state
   }

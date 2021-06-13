@@ -15,11 +15,15 @@ const Detail = (props) => {
         return () => { clearTimeout(timer) }  
     }, [alert])
 
+
     let { id } = useParams();
     let productsId = props.state.find((a) => {
-        return a.id === id
+        return a.id == id
     });
+    // state중에서, 각 상품의 id === 파라미터 값이 같은 경우만 productId로 담음
+    console.log(productsId)  
     
+
     let [push, setPush] = useState(0)
     let [switchs, setSwitchs] = useState(false)  //CSSTransition
 
