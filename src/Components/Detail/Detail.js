@@ -17,11 +17,12 @@ const Detail = (props) => {
 
 
     let { id } = useParams();
-    let productsId = props.state.find((a) => {
-        return a.id == id
+    let productOriginId = props.shoes.find(function(a) {
+        return a.id == id;
     });
     // state중에서, 각 상품의 id === 파라미터 값이 같은 경우만 productId로 담음
-    console.log(productsId)  
+    console.log(props.shoes)
+    console.log(productOriginId)  
     
 
     let [push, setPush] = useState(0)
@@ -55,17 +56,17 @@ const Detail = (props) => {
             }
             <div className="row">
                 <div className="col-md-6">
-                    <img src={'https://codingapple1.github.io/shop/shoes' + (productsId.id+1) + '.jpg'} width="100%" />
+                    <img src={'https://codingapple1.github.io/shop/shoes' + (productOriginId.id+1) + '.jpg'} width="100%" />
                 </div>
                 <div className="col-md-6 mt-4">
-                    <h4 className="pt-5"> {productsId.title} </h4>
-                    <p> {productsId.content} </p>
-                    <p> {productsId.price}원 </p>
+                    <h4 className="pt-5"> {productOriginId.title} </h4>
+                    <p> {productOriginId.content} </p>
+                    <p> {productOriginId.price}원 </p>
                     <p> 재고: {props.lestState[0]}</p>
                     
                     <button className="btn btn-danger order" onClick={() => {
                         props.dispatch({ type: 'lestSubstract' });
-                        props.dispatch({ type: 'cartAdd', payload: {id: productsId.id , title: productsId.title, quan: 1} });
+                        props.dispatch({ type: 'cartAdd', payload: {id: productOriginId.id , title: productOriginId.title, quan: 1} });
                         history.push('./cart');
                     }}> 주문하기</button>
                     <button className="btn btn-danger back" onClick={() => { history.push('/') }}>Back</button>

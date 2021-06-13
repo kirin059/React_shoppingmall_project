@@ -7,8 +7,49 @@ import './Product.scss';
 const Product = (props) => {
     let history = useHistory();
 
+    function compareAscPrice(key) {
+        return function (a, b) {
+            let x = parseInt(a[key]);
+            let y = parseInt(b[key]);
+
+            if (x < y) return -1;
+            if (x > y) return 1;
+            return 0;
+        }
+    }
+
+    function compareDescPrice(key) {
+        return function (a, b) {
+            let x = parseInt(a[key]);
+            let y = parseInt(b[key]);
+
+            if (x > y) return -1;
+            if (x < y) return 1;
+            return 0;
+        }
+    }
+
+    function sortHighPrice(key) {
+        let copy = [...props.state];
+        copy.sort(compareAscPrice(key))
+        return copy
+    }
+
+    function sortLowPrice(key) {
+        let copy = [...props.state];
+        copy.sort(compareDescPrice(key))
+        return copy
+    }
+
     return (
+        <>
+        <div className="sort_product">
+            <p onClick={ sortHighPrice(props.state.price) }>높은금액순</p>
+            <p onClick={ sortLowPrice(props.state.price) }> 낮은금액순</p>
+            <p>인기순</p>
+        </div>
         <div className="row">
+            
             {
                 props.state.map((a, i) => {
                     return (
@@ -32,7 +73,8 @@ const Product = (props) => {
                   })
             }} >더보기</button>
            
-        </div>
+            </div>
+            </>
     );
 };
 

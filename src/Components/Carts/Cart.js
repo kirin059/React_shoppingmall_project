@@ -23,15 +23,15 @@ const Cart = (props) => {
                     props.cartState.map((a, i) => {
                         return (
                             <tr key={i}>
-                                <td> { a[i].id }</td>
-                                <td> { a[i].title} </td>
-                                <td> { a[i].quan } </td>
+                                <td> { props.cartState[i].id }</td>
+                                <td> { props.cartState[i].title} </td>
+                                <td> { props.cartState[i].quan } </td>
                                 <td>
                                     <button class="btn" onClick={() => {
-                                        props.dispatch({ type: 'plus', payload: a.id })
+                                        props.dispatch({ type: 'plus', payload: props.cartState.id })
                                     }}>+</button>
                                     <button class="minusBtn btn" onClick={() => {
-                                        props.dispatch({ type: 'substract', payload: a.id })
+                                        props.dispatch({ type: 'substract', payload: props.cartState.id })
                                     }}>-</button>
                                 </td>
                             </tr>
