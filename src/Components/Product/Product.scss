@@ -1,14 +1,16 @@
 .row {
-  col-md-4 {
-    img {
-      cursor: pointer;
+    .col-md-4 {
+        img {
+          cursor: pointer;
+        }
+
+        h4 {
+          cursor: pointer;
+        }
     }
-    h4 {
-      cursor: pointer;
+    
+    .moreBtn {
+      margin: 50px auto;
     }
-  }
-  .btn-primary {
-    margin: 50px auto;
-  }
 }
 

@@ -21,11 +21,11 @@ const Product = (props) => {
                     )
                 })
             }
-            <button className="btn btn-primary" onClick={() => {
+
+            <button className="btn btn-primary moreBtn" onClick={() => {
                 axios.get('https://codingapple1.github.io/shop/data2.json')
                 .then((result) => {
                     props.dispatch({ type: 'addList', payload: result.data })
-                    console.log(result.data)
                     //setShoes([...shoes, ...result.data])
                 })
                 .catch(() => {

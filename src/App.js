@@ -54,26 +54,10 @@ function App() {
 
             <lestContext.Provider value={lest}>
               <div className="row">  
-                {
-                  shoes.map((a, i) => {
-                    return (
-                      <Product shoes={shoes[i]} i={i} key={i} />
-                    )
-                  })
-                }
+                <Product />      
               </div>
             </lestContext.Provider>
 
-            <button className="btn btn-primary" onClick={() => {
-              axios.get('https://codingapple1.github.io/shop/data2.json')
-                .then((result) => {
-                  console.log(result.data)
-                  setShoes([...shoes, ...result.data])
-                })
-                .catch(() => {
-                  console.log('failure')
-                })
-            }}>더보기</button>
           </div>
         </Route>
 
