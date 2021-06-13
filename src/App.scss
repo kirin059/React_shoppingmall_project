@@ -4,7 +4,7 @@
   #navContainer {
     .brand {
       padding: 10px 20px;
-      color: rgb(27, 27, 27);
+      color: rgb(105, 96, 96);
       font-size: 35px;
       font-weight: 800;
 
@@ -26,13 +26,42 @@
 }
 
   .background {
-    background-image: url(./img/background.jpg);
+    position: relative;
+    background-image: url(./img/jumbotron_shoes.jpg);
     background-position: center;
-    color: #fff;
+    background-repeat: none;
+    color: rgb(78, 245, 78);
+    z-index: 0;
+
+    h1 {
+      color: #fff;
+      font-size: 60px;
+      font-weight: 800;
+      z-index: 5;
+    }
+
+    p {
+      font-size: 23px;
+      font-weight: 600;
+      z-index: 5;
+    }
   }
+  .background::before {
+    content: '';
+    opacity: 0.3;
+    background-color: #000;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+  }
+
 
   .btn-primary {
     margin: 50px 0;
+    z-index: 5;
   }
 }
 

@@ -43,7 +43,8 @@ function App() {
             <h1>20% Season OFF</h1>
             <p>
               This site offer a biggest sale product in the Korea.
-              We hope you to enjoy here</p>
+              We hope you to enjoy here! <br />
+            You can choose what you like && take it with free delivery.</p>
             <p>
               <Button variant="primary">Learn more</Button>
             </p>
