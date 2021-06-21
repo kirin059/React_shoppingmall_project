@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Navbar, Nav, NavDropdown, Button, Jumbotron } from 'react-bootstrap';
 import { Link, Route, Switch } from 'react-router-dom';
-import axios from 'axios';
 import Data from './data.js';
 import Product from './Components/Product/Product';
 import Detail from './Components/Detail/Detail';
@@ -37,7 +36,6 @@ function App() {
           </Nav>
         </Navbar.Collapse>
       </Navbar>
-
       <Switch>  
         <Route exact path="/">
           <Jumbotron className="background">
@@ -50,36 +48,28 @@ function App() {
               <Button variant="primary">Learn more</Button>
             </p>
           </Jumbotron>
-
           <div className="container">
-
             <lestContext.Provider value={lest}>
               <div className="row">  
                 <Product />      
               </div>
             </lestContext.Provider>
-
           </div>
         </Route>
-
         <Route path="/detail/:id">
           <lestContext.Provider value={lest}>
             <Detail shoes={shoes} lest={lest} setLest={setLest} />
           </lestContext.Provider>
         </Route>
-
         <Route path="/cart">
           <Cart />
         </Route>
-
         <Route path="/login">
           <Login />
         </Route>
-
         <Route path="/signup">
           <Signup />
         </Route>
-
         <Route path="/:id"> 
           <div></div>
         </Route>

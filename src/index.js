@@ -21,6 +21,27 @@ function reducer(state=shoeState, action) {
     let setShoes = [...state, ...action.payload]
     return setShoes
   }
+  else if (action.type === 'sortHighPrice') {
+    let copy = [...state];
+    copy.sort(function (a, b) {
+      return b.price - a.price;
+    });
+    return copy
+  }
+  else if (action.type === 'sortLowPrice') {
+    let copy = [...state];
+    copy.sort(function (a, b) {
+      return a.price - b.price;
+    });
+    return copy
+  }
+  else if (action.type === 'sortPopularPrice') {
+    let copy = [...state];
+    copy.sort(function (a, b) {
+      return a.id - b.id;
+    });
+    return copy
+  }
   else {
     return state
   }
