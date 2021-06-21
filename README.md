@@ -27,7 +27,6 @@
 * React-Router를 활용한 SPA 라우팅
 * Bootstrap 라이브러리를 활용한 레이아웃 구성
 * CSSTransition으로 transition효과 적용
-* Express.js로 서버 연동
 * PWA 발행
 
 ## `Project Output`
