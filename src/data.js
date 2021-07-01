@@ -4,7 +4,7 @@ export default [
         img: "https://codingapple1.github.io/shop/shoes1.jpg",
         title: "White and Black",
         content: "Born in France",
-        price: 120000
+        price: 150000
     },
     {
         id: 1,

@@ -20,7 +20,7 @@ const Product = (props) => {
                 props.state.map((a, i) => {
                     return (
                         <div className="col-md-4" key={i} onClick={()=>{ history.push('/detail/' + props.state[i].id) }}>
-                            <img src={"https://codingapple1.github.io/shop/shoes" + (i + 1) + ".jpg"} width="100%" />
+                            <img src={"https://codingapple1.github.io/shop/shoes" + (props.state[i].id+1) + ".jpg"} width="100%" />
                             <h4> { props.state[i].title } </h4>
                             <p> {props.state[i].content} & {props.state[i].price} </p>
                             <p> 재고: { props.lestState[i] }</p>
