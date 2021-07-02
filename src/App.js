@@ -6,7 +6,8 @@ import Product from './Components/Product/Product';
 import Detail from './Components/Detail/Detail';
 import Cart from './Components/Carts/Cart';
 import Login from './Components/Login/Login';
-import Signup from './Components/Signup/Signup'
+import Signup from './Components/Signup/Signup';
+import LastProduct from './Components/LastProduct/LastProduct.js';
 
 import './App.scss';
 
@@ -74,6 +75,7 @@ function App() {
           <div></div>
         </Route>
       </Switch>
+      <LastProduct />
     </div >
   );
 }

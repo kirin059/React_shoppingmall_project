@@ -15,28 +15,26 @@ const Detail = (props) => {
         return () => { clearTimeout(timer) }  
     }, [alert])
 
-
     let { id } = useParams();
-    let productId = props.shoes.find(function(a) {
+    let productId = props.state.find(function(a) {
         return a.id == id;
     });
-
     let [push, setPush] = useState(0)
     let [switchs, setSwitchs] = useState(false)  //CSSTransition
 
-    // localStorage에 데이터를 저장하고 최근본상품에 활용
-    useEffect(() => {
-        let arr = localStorage.getItem('watched');
-        if (arr) {
-            arr = JSON.parse(arr)
-        }
+    // const [shoeItems, setShoesItems] = useState({
+    //     img: productId.img
+    // })
+    // localStorage.setItem('items', JSON.stringify(shoeItems));
 
-        arr.push(id)
-        arr = new Set(arr); // 중복제거
-        arr = [...arr];
-        localStorage.setItem('watched', JSON.stringify(arr));
-    },[]);
-
+    let [info, setInfo] = useState({
+        id: productId.id,
+        img: productId.img,
+        title: productId.title,
+        content: productId.content,
+        price: productId.price
+    })
+    localStorage.setItem('items', JSON.stringify(info));
 
     return (
         <div className="container">
@@ -61,7 +59,7 @@ const Detail = (props) => {
                     <button className="btn btn-danger order" onClick={() => {
                         props.dispatch({ type: 'lestSubstract' });
                         props.dispatch({ type: 'cartAdd', payload: {id: productId.id , title: productId.title, quan: 1} });
-                        history.push('./cart');
+                        history.push('/cart');
                     }}> 주문하기</button>
                     <button className="btn btn-danger back" onClick={() => { history.push('/') }}>Back</button>
                 </div>

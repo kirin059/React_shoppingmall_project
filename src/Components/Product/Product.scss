@@ -32,3 +32,38 @@
     }
 }
 
+@media only screen and (max-width: 480px) {
+  .sort_product {
+    display: flex;
+    width: 450px;
+    margin: 20px auto;
+    font-weight: 400;
+
+    p {
+        margin: 0 30px;
+        cursor: pointer;
+    }
+
+    p::before {
+        content: '|';
+        margin-right: 6px;
+        color: rgb(163, 161, 161);
+    }
+  }
+
+  .row {
+      .col-md-4 {
+          img {
+            cursor: pointer;
+          }
+
+          h4 {
+            cursor: pointer;
+          }
+      }
+      
+      .moreBtn {
+        margin: 30px auto;
+      }
+  }
+}

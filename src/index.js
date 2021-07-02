@@ -11,9 +11,7 @@ import Data from './data';
 
 let shoeState = Data;
 let lestState = [10, 11, 12, 13, 14, 15, 16];
-let cartState = [
-  {id: 0, name: 'nike', quan: 1}
-];
+let cartState = [];
 
 // 기본 상품 데이터
 function reducer(state=shoeState, action) {
@@ -81,14 +79,22 @@ function reducer3(state = cartState, action) {
   // cart에 수량증감
   else if (action.type === 'plus') {
     let setCart = [...state]
+    //console.log(setCart)
     setCart[action.payload].quan++;
     return setCart
   }
 
-  else if (action.type === 'substract') {  
+  else if (action.type === 'substract') {
     let setCart = [...state]
-    setCart[action.payload].quan--;
-    return setCart
+    
+    if (setCart[action.payload].quan > 0) {  
+      setCart[action.payload].quan--;
+      return setCart
+    }
+    else {
+      return 0
+    }
+    
   }
 
   else {

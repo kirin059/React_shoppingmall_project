@@ -22,24 +22,26 @@
         margin-bottom: 30px;
         background-color: #ffe591;
     }
+    .row {
+        
+        .mt-4 {
+            width: 80px;
+            padding: 15px 0;
+            background-color:  #eeeeee;
+            border-radius: 5px;
     
-    .mt-4 {
-        width: 80px;
-        padding: 15px 0;
-        background-color:  #eeeeee;
-        border-radius: 5px;
-
-        .pt-5 {
-            margin: 0;
-        }
-
-        .order {
-            margin-right: 10px;
-        }
-
-        .back {
-            background-color: #6b6767;
-            border: 1px solid #6b6767;
+            .pt-5 {
+                margin: 0;
+            }
+    
+            .order {
+                margin-right: 10px;
+            }
+    
+            .back {
+                background-color: #6b6767;
+                border: 1px solid #6b6767;
+            }
         }
     }
 
@@ -50,5 +52,50 @@
     .effect-evter-active {
         opacity: 1;
         transition: all 2000ms;
+    }
+}
+
+
+
+@media only screen and (max-width: 480px) {
+    .container {
+        h4 {
+            margin: 30px auto;
+            padding-bottom: 20px;
+            font-size: 35px;
+        }
+        .my-alert {
+            max-width: 500px;
+            width: 100%;
+            margin: auto;
+            padding: 20px;
+            background-color: #ffe591;
+            border-radius: 10px;
+            
+            p {
+                margin-bottom: 0
+            }
+        }
+                
+        .row {
+            display: flex;
+            flex-direction: column;
+            .mt-4 {
+                width: 420px;
+                margin: 0 auto;
+                padding: 15px 0;
+                background-color:  #eeeeee;
+                border-radius: 5px;
+            }
+        }
+
+        .effect-enter {
+            opacity: 0;
+        }
+
+        .effect-evter-active {
+            opacity: 1;
+            transition: all 2000ms;
+        }
     }
 }
