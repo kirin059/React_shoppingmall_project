@@ -21,21 +21,16 @@ const Detail = (props) => {
     });
     let [push, setPush] = useState(0)
     let [switchs, setSwitchs] = useState(false)  //CSSTransition
-
-    // const [shoeItems, setShoesItems] = useState({
-    //     img: productId.img
-    // })
-    // localStorage.setItem('items', JSON.stringify(shoeItems));
-
-    let [info, setInfo] = useState({
+    let [info, setInfo] = useState([{
         id: productId.id,
         img: productId.img,
         title: productId.title,
         content: productId.content,
         price: productId.price
-    })
-    localStorage.setItem('items', JSON.stringify(info));
+    }])
 
+    localStorage.setItem('items', JSON.stringify(info));
+    
     return (
         <div className="container">
             <h4> Detail </h4>

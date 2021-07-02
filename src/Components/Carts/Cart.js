@@ -5,8 +5,8 @@ import './Cart.scss';
 
 const Cart = (props) => {
     let [alert, setAlert] = useState(true);
-    console.log(props.cartState)
-    console.log(props.state)
+    // console.log(props.cartState)
+    // console.log(props.state)
     return (
         <div className="cart">
             <Table>
