@@ -13,13 +13,13 @@ const LastProduct = (props) => {
         else {
             info = JSON.parse(info);
             console.log(info)
+            //info = parseInt(info)
             setLate(info)
         }
         console.log(info)
     }, []);
     console.log(late)
-    console.log(props.state)
-    
+    console.log(setLate)
     return (
         <div className="LastProduct">
             <div className="LastProduct_title">최근 본 상품</div>
@@ -27,7 +27,7 @@ const LastProduct = (props) => {
                 {
                     late.map((a, i) => {
                         return (
-                            <li key={i}><img src={"https://codingapple1.github.io/shop/shoes" + (late[i]) + ".jpg"} /></li>
+                            <li key={i}><img src={"https://codingapple1.github.io/shop/shoes" + (parseInt(late[i])+1) + ".jpg"} /></li>
                         )
                     })
                 }               
