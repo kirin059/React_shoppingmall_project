@@ -21,16 +21,23 @@ const Detail = (props) => {
     });
     let [push, setPush] = useState(0)
     let [switchs, setSwitchs] = useState(false)  //CSSTransition
-    let [info, setInfo] = useState([{
-        id: productId.id,
-        img: productId.img,
-        title: productId.title,
-        content: productId.content,
-        price: productId.price
-    }])
+     
 
-    localStorage.setItem('items', JSON.stringify(info));
-    
+    //localStorage.setItem('items', JSON.stringify(info));
+    // info값을 추가해주는 함수가 아니라 덮어쓰는 함수이다. 따라서 항목들이 업데이트 될 때, 계속 덮어져서 1개씩만 보인다
+
+    // 1. detail 페이지에 들어가면(최초 1번만 실행되도록 deps 걸어줌)
+    useEffect(() => {
+        let info = localStorage.getItem('items');
+        if (info == null) { info = [] } else { info = JSON.parse(info) }
+
+        info.push(id);
+        info = new Set(info);
+        info = [...info];
+
+        localStorage.setItem('items', JSON.stringify(info));
+    }, []);
+
     return (
         <div className="container">
             <h4> Detail </h4>

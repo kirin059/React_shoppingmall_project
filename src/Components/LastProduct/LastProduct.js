@@ -7,26 +7,18 @@ const LastProduct = (props) => {
 
     useEffect(() => {
         let info = localStorage.getItem('items');
-        //console.log(info)
         if (info == null) {
             info = []
         }
         else {
             info = JSON.parse(info);
             console.log(info)
+            setLate(info)
         }
-        // console.log(info)
-        // late.push(info)
-        // console.log(late)
-        // //late = new Set(info);
-        // late = [...late]
-        setLate(info)
-        
-        // info.push(info)
-        // info = new Set(info); // 중복제거
-        // info = [...info];      
+        console.log(info)
     }, []);
-  console.log(late)
+    console.log(late)
+    console.log(props.state)
     
     return (
         <div className="LastProduct">
@@ -35,7 +27,7 @@ const LastProduct = (props) => {
                 {
                     late.map((a, i) => {
                         return (
-                            <li key={i}><img src={late[i].img} /></li>
+                            <li key={i}><img src={"https://codingapple1.github.io/shop/shoes" + (late[i]) + ".jpg"} /></li>
                         )
                     })
                 }               
