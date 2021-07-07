@@ -100,13 +100,13 @@ function reducer3(state = cartState, action) {
     let setCart = [...state];
     let copy = setCart.findIndex((e, i) => e.id === action.payload );
     
-    if (setCart[copy].quan >= 0) {
+    if (setCart[copy].quan > 0) {
       
       setCart[copy].quan--;
       return setCart
     }
     else {
-      return null
+      return setCart
     }
     
   }
