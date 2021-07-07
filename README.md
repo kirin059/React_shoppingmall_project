@@ -31,7 +31,7 @@
 
 ## `Project Output`
 
-![shop](https://user-images.githubusercontent.com/71425369/121040036-8dca8080-c7ec-11eb-8c59-dbd0388ceac1.gif)
+![shop (2)](https://user-images.githubusercontent.com/71425369/124791944-816e4a80-df87-11eb-84cd-14720f057d77.gif)
 
 
 React 및 redux를 적극 활용한 프로젝트 입니다. 다양한 hooks를 활용하여 쇼핑몰 메인 페이지, 상품 detail페이지, 장바구니 페이지 등을 제작하였습니다. 또한 Bootstrap과 CSSTransition을 활용하여 보다 다양한 UI를 구성하였습니다. 
