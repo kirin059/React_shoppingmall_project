@@ -78,21 +78,35 @@ function reducer3(state = cartState, action) {
 
   // cart에 수량증감
   else if (action.type === 'plus') {
-    let setCart = [...state]
-    //console.log(setCart)
-    setCart[action.payload].quan++;
+    let setCart = [...state];
+
+    console.log(setCart)  // [{id: 1, title: "" , quan: 1}, {id: 5, title:""}, {id: 3, title:""}]
+    
+    let copy = setCart.findIndex((e, i) => e.id === action.payload );
+    console.log(copy) 
+    setCart[copy].quan++;
+  
+    
+// 아마 지금 수량증가/감소 기능은 id가 2인 상품의 +/- 버튼을 누르면
+// state에서 2번째 들어있는 상품을 수정하라고 간단히 개발해놔서 그렇습니다 
+// 2번째 말고 id가 2인 상품을 수정하라고 개발해놓으면 되겠군요 
     return setCart
   }
+    
+    
+    
 
   else if (action.type === 'substract') {
-    let setCart = [...state]
+    let setCart = [...state];
+    let copy = setCart.findIndex((e, i) => e.id === action.payload );
     
-    if (setCart[action.payload].quan > 0) {  
-      setCart[action.payload].quan--;
+    if (setCart[copy].quan >= 0) {
+      
+      setCart[copy].quan--;
       return setCart
     }
     else {
-      return 0
+      return null
     }
     
   }

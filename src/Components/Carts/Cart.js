@@ -5,8 +5,8 @@ import './Cart.scss';
 
 const Cart = (props) => {
     let [alert, setAlert] = useState(true);
-    // console.log(props.cartState)
-    // console.log(props.state)
+    console.log(props.cartState)
+    console.log(props.state)
     return (
         <div className="cart">
             <Table>
@@ -23,15 +23,15 @@ const Cart = (props) => {
                     props.cartState.map((a, i) => {
                         return (
                             <tr key={i}>
-                                <td> { props.cartState[i].id }</td>
+                                <td> { props.cartState[i].id } </td>
                                 <td> { props.cartState[i].title} </td>
                                 <td> { props.cartState[i].quan } </td>
                                 <td>
                                     <button class="btn" onClick={() => {
-                                        props.dispatch({ type: 'plus', payload: props.cartState.id })
+                                        props.dispatch({ type: 'plus', payload: props.cartState[i].id })
                                     }}>+</button>
                                     <button class="minusBtn btn" onClick={() => {
-                                        props.dispatch({ type: 'substract', payload: props.cartState.id })
+                                        props.dispatch({ type: 'substract', payload: props.cartState[i].id })
                                     }}>-</button>
                                 </td>
                             </tr>
