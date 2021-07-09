@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import './Cart.scss';
 
 const Cart = (props) => {
-    let [alert, setAlert] = useState(true);
+    const [alert, setAlert] = useState(true);
     console.log(props.cartState)
     console.log(props.state)
     return (

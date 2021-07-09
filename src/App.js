@@ -12,12 +12,12 @@ import LastProduct from './Components/LastProduct/LastProduct.js';
 import './App.scss';
 
 
-export let lestContext = React.createContext();
+export const lestContext = React.createContext();
 
 function App() {
 
-  let [shoes, setShoes] = useState(Data);
-  let [lest, setLest] = useState([10, 11, 12, 15, 2, 4, 6])
+  const [shoes, setShoes] = useState(Data);
+  const [lest, setLest] = useState([10, 11, 12, 15, 2, 4, 6])
 
   return (
     <div className="App">

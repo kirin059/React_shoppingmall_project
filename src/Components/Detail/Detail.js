@@ -7,20 +7,20 @@ import './Detail.scss';
 import Tap from '../Tap/Tap'
 
 const Detail = (props) => {
-    let history = useHistory();
+    const history = useHistory();
 
-    let [alert, setAlert] = useState(true)
+    const [alert, setAlert] = useState(true)
     useEffect(() => {
-        let timer = setTimeout(() => { setAlert(false) }, 2000);
+        const timer = setTimeout(() => { setAlert(false) }, 2000);
         return () => { clearTimeout(timer) }  
     }, [alert])
 
-    let { id } = useParams();
-    let productId = props.state.find(function(a) {
+    const { id } = useParams();
+    const productId = props.state.find(function(a) {
         return a.id == id;
     });
-    let [push, setPush] = useState(0)
-    let [switchs, setSwitchs] = useState(false)  //CSSTransition
+    const [push, setPush] = useState(0)
+    const [switchs, setSwitchs] = useState(false)  //CSSTransition
      
 
     //localStorage.setItem('items', JSON.stringify(info));
@@ -28,7 +28,7 @@ const Detail = (props) => {
 
     // 1. detail 페이지에 들어가면(최초 1번만 실행되도록 deps 걸어줌)
     useEffect(() => {
-        let info = localStorage.getItem('items');
+        const info = localStorage.getItem('items');
         if (info == null) { info = [] } else { info = JSON.parse(info) }
 
         info.push(id);

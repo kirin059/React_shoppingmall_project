@@ -9,32 +9,32 @@ import './index.css';
 import App from './App';
 import Data from './data';
 
-let shoeState = Data;
-let lestState = [10, 11, 12, 13, 14, 15, 16];
-let cartState = [];
+const shoeState = Data;
+const lestState = [10, 11, 12, 13, 14, 15, 16];
+const cartState = [];
 
 // 기본 상품 데이터
 function reducer(state=shoeState, action) {
   if (action.type === 'addList') {
-    let setShoes = [...state, ...action.payload]
+    const setShoes = [...state, ...action.payload]
     return setShoes
   }
   else if (action.type === 'sortHighPrice') {
-    let copy = [...state];
+    const copy = [...state];
     copy.sort(function (a, b) {
       return b.price - a.price;
     });
     return copy
   }
   else if (action.type === 'sortLowPrice') {
-    let copy = [...state];
+    const copy = [...state];
     copy.sort(function (a, b) {
       return a.price - b.price;
     });
     return copy
   }
   else if (action.type === 'sortPopularPrice') {
-    let copy = [...state];
+    const copy = [...state];
     copy.sort(function (a, b) {
       return a.id - b.id;
     });
@@ -48,7 +48,7 @@ function reducer(state=shoeState, action) {
 // 재고 변경 데이터
 function reducer2(state=lestState, action) {
   if (action.type === 'lestSubstract') {
-    let setLest = [...lestState];
+    const setLest = [...lestState];
     setLest = [9,10,11,12,13,14,15]
     return setLest
   }
@@ -61,16 +61,16 @@ function reducer2(state=lestState, action) {
 function reducer3(state = cartState, action) {
   // 주문하기 누르면 cart에 항목 추가
   if (action.type === 'cartAdd') {
-    let found = state.findIndex((a) => { return a.id === action.payload.id })
+    const found = state.findIndex((a) => { return a.id === action.payload.id })
     
     if (found >= 0) {
-      let setCart = [...state];
+      const setCart = [...state];
       //setCart[found] = action.payload;
       setCart[found].quan++;
       return setCart;
     }
     else{
-      let setCart =[...state];
+      const setCart =[...state];
       setCart.push(action.payload)
       return setCart;
     }
@@ -78,11 +78,11 @@ function reducer3(state = cartState, action) {
 
   // cart에 수량증감
   else if (action.type === 'plus') {
-    let setCart = [...state];
+    const setCart = [...state];
 
     console.log(setCart)  // [{id: 1, title: "" , quan: 1}, {id: 5, title:""}, {id: 3, title:""}]
     
-    let copy = setCart.findIndex((e, i) => e.id === action.payload );
+    const copy = setCart.findIndex((e, i) => e.id === action.payload );
     console.log(copy) 
     setCart[copy].quan++;
   
@@ -97,8 +97,8 @@ function reducer3(state = cartState, action) {
     
 
   else if (action.type === 'substract') {
-    let setCart = [...state];
-    let copy = setCart.findIndex((e, i) => e.id === action.payload );
+    const setCart = [...state];
+    const copy = setCart.findIndex((e, i) => e.id === action.payload );
     
     if (setCart[copy].quan > 0) {
       

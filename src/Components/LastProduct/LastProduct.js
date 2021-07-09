@@ -3,10 +3,10 @@ import { connect } from 'react-redux';
 import './LastProduct.scss';
 
 const LastProduct = (props) => {
-    let [late, setLate] = useState([]);
+    const [late, setLate] = useState([]);
 
     useEffect(() => {
-        let info = localStorage.getItem('items');
+        const info = localStorage.getItem('items');
         if (info == null) {
             info = []
         }

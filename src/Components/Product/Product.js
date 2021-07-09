@@ -5,7 +5,7 @@ import axios from 'axios';
 import './Product.scss';
 
 const Product = (props) => {
-    let history = useHistory();
+    const history = useHistory();
 
     return (
         <>
