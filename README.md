@@ -14,7 +14,6 @@
 * react-router-dom
 * axios
 * CSSTransition
-* Express.js
 
 ## `Implementation details`
 
